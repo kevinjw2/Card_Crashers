@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BattleHandler.cs" />
+    <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\Deck.cs" />
+    <Compile Include="Assets\Scripts\EnemyBattle.cs" />
+    <Compile Include="Assets\Scripts\PlayerBattle.cs" />
+    <Compile Include="Assets\Scripts\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Users/Kevin/Documents/Unity_Projects/Card_Crashers/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
