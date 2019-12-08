@@ -5,17 +5,45 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Tilemap ground, obstacles;
+    public Tilemap ground, obstacles, enemy;
     Vector3 pos;
     public float speed;
+    private BattleHandler battle;
+    private TileBase enemyTile;
 
     void Start()
     {
         pos = transform.position; // Take the current position
+        battle = null;
+        enemyTile = null;
     }
 
     void Update()
     {
+        //Disable movement when in battle
+        if(battle != null)
+        {
+            if (battle.state == BattleHandler.BattleState.PlayerWin)
+            {
+                //End battle
+                Destroy(battle);
+                battle = null;
+                Destroy(enemyTile);
+                enemyTile = null;
+            }
+            else if (battle.state == BattleHandler.BattleState.EnemyWin)
+            {
+                //Game over
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            }
+
+                return;
+        }
+
         //Only move if we're not currently moving between tiles
         if (transform.position == pos)
         {
@@ -62,12 +90,21 @@ public class PlayerMovement : MonoBehaviour
         //Check tilemap for terrain condition at new position
         TileBase groundTile = ground.GetTile(ground.WorldToCell(newPos));
         TileBase obstacleTile = obstacles.GetTile(obstacles.WorldToCell(newPos));
+        enemyTile = enemy.GetTile(enemy.WorldToCell(newPos));
 
-        if (groundTile != null && obstacleTile == null)
+        if (enemyTile != null)
+        {
+            //Enemy encounter
+            PlayerBattle player = this.gameObject.GetComponent<PlayerBattle>();
+            EnemyBattle enemy = new EnemyBattle();
+            battle = this.gameObject.AddComponent<BattleHandler>();
+            battle.player = player;
+            battle.enemy = enemy;
+        }
+        else if (groundTile != null && obstacleTile == null)
         {
             pos = newPos;
         }
-
         
     }
 

@@ -2,21 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBattle : MonoBehaviour
+public class EnemyBattle
 {
-    public int health;
-    public int attack;
+    public int health = 10;
+    public int attack = 2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = 10;
-        attack = 2;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

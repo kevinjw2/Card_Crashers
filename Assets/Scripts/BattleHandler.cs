@@ -8,8 +8,11 @@ using UnityEngine;
 //When the battle is over the BattleHandler is destroyed
 public class BattleHandler : MonoBehaviour
 {
+    public enum BattleState {PlayerTurn, EnemyTurn, PlayerWin, EnemyWin };
+
     public PlayerBattle player;
     public EnemyBattle enemy;
+    public BattleState state;
 
     public BattleHandler(PlayerBattle player, EnemyBattle enemy)
     {
@@ -21,6 +24,7 @@ public class BattleHandler : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+        state = BattleState.PlayerTurn;
     }
 
     // Update is called once per frame
