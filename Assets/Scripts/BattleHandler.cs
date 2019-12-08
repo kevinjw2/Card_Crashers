@@ -11,6 +11,7 @@ public class BattleHandler : MonoBehaviour
     public enum BattleState {PlayerTurn, EnemyTurn, PlayerWin, EnemyWin };
 
     public PlayerBattle player;
+    public PlayerHand cardsInHand;
     public EnemyBattle enemy;
     public BattleState state;
 
@@ -25,6 +26,8 @@ public class BattleHandler : MonoBehaviour
     {
         Cursor.visible = true;
         state = BattleState.PlayerTurn;
+        cardsInHand = player.cardsInHand;
+        cardsInHand.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
