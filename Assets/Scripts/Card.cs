@@ -11,7 +11,7 @@ public abstract class Card : MonoBehaviour
     void Start()
     {
         //Hide cards until they need to be displayed
-        SetActive(false);
+        //SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,9 +22,9 @@ public abstract class Card : MonoBehaviour
 
     public abstract void CardEffect(PlayerBattle player, EnemyBattle enemy);
 
-    public void SetActive(bool val)
-    {
-        this.gameObject.SetActive(val);
-    }
+    //public void SetActive(bool val)
+    //{
+    //    this.gameObject.SetActive(val);
+    //}
 
 }
