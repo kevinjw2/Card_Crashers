@@ -7,7 +7,6 @@ public class PlayerHand : MonoBehaviour
     public Card[] cardList;
     private Card clickedCard;
     //private const int capacity;
-    //TODO: physical instantiation of cards in hand, clickable handler
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,6 @@ public class PlayerHand : MonoBehaviour
     void Update()
     {
         //TODO: manage physical sorting/display of cards
-        //TODO: detect click on a card
     }
 
     public void AddCard(Card card)

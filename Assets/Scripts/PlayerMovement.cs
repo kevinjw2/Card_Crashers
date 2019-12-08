@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private BattleHandler battle;
     private TileBase enemyTile;
+    private Vector3 enemyPos;
 
     void Start()
     {
@@ -28,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
                 //End battle
                 Destroy(battle);
                 battle = null;
-                Destroy(enemyTile);
+                //Disable enemy tile
+                enemy.SetTile(enemy.WorldToCell(enemyPos), null);
                 enemyTile = null;
             }
             else if (battle.state == BattleHandler.BattleState.EnemyWin)
@@ -91,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         TileBase groundTile = ground.GetTile(ground.WorldToCell(newPos));
         TileBase obstacleTile = obstacles.GetTile(obstacles.WorldToCell(newPos));
         enemyTile = enemy.GetTile(enemy.WorldToCell(newPos));
+        enemyPos = newPos;
 
         if (enemyTile != null)
         {

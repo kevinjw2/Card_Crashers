@@ -8,7 +8,7 @@ using UnityEngine;
 //When the battle is over the BattleHandler is destroyed
 public class BattleHandler : MonoBehaviour
 {
-    public enum BattleState {PlayerTurn, EnemyTurn, PlayerWin, EnemyWin };
+    public enum BattleState {PlayerTurn, EnemyTurn, PlayerWin, EnemyWin};
 
     public PlayerBattle player;
     public PlayerHand cardsInHand;
@@ -28,26 +28,66 @@ public class BattleHandler : MonoBehaviour
         state = BattleState.PlayerTurn;
         cardsInHand = player.cardsInHand;
         cardsInHand.gameObject.SetActive(true);
+
+        //TODO display player health, enemy health
     }
 
     // Update is called once per frame
     void Update()
     {
-        //At start: disable overworld movement and position player/enemy for battle
+        Debug.Log("Current BattleState is " + state);
+        Debug.Log("Player health is " + player.health);
+        Debug.Log("Enemy health is " + enemy.health);
 
-        //Player turn:
-        //1. display player hand, player health, enemy health
-        //2. Stall until player takes their turn, using click event handling
-        //3. Perform selected player action (call card's effect function, update health/status etc)
-        //4. update state (remove card from hand, take new one from deck)
+        if (state == BattleState.PlayerTurn)
+        {
+            //Player turn:
+            if (cardsInHand.cardHasBeenClicked())
+            {
+                Card clicked = cardsInHand.getClicked();
+                clicked.CardEffect(player, enemy);
+                state = BattleState.EnemyTurn;
 
-        //Enemy turn:
-        //5. Perform basic enemy attack, updating player health/status
+                //TODO: draw card, update hand, discard used card
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (state == BattleState.EnemyTurn)
+        {
+            //Enemy turn:
+            enemy.Attack(player);
+            state = BattleState.PlayerTurn;
+        }
+        
+        CheckWinState();
+        if(state == BattleState.PlayerWin || state == BattleState.EnemyWin)
+        {
+            //TODO: Battle is over
+            //This is currently handled in player movement script
+        }
 
-        //Between Turns:
-        //6. Check condition for battle end state (i.e. if player or enemy are defeated)
-        //7. Reset overworld state, player deck, etc
-        //8. destroy/disable overworld enemy
-        //9. destroy battle handler
+    }
+
+    private void OnDestroy()
+    {
+        //Reset world state before battle closes
+        player.ResetStats();
+        cardsInHand.gameObject.SetActive(false);
+    }
+
+    //Checks conditions and sets the appropriate game state
+    private void CheckWinState()
+    {
+        if (player.health <= 0)
+        {
+            state = BattleState.EnemyWin;
+        }
+        else if (enemy.health <= 0)
+        {
+            state = BattleState.PlayerWin;
+        }
     }
 }

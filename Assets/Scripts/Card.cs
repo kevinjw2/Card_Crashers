@@ -7,7 +7,6 @@ public abstract class Card : MonoBehaviour, IPointerClickHandler
 {
     public int manaCost;
     private PlayerHand playerHand;
-    //TODO: add references to physical gameobject and image asset
 
     // Start is called before the first frame update
     void Awake()
