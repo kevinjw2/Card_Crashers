@@ -37,6 +37,8 @@ public abstract class Card : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public abstract int ManaCost();
+
     //public void SetActive(bool val)
     //{
     //    this.gameObject.SetActive(val);

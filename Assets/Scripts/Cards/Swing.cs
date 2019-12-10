@@ -19,4 +19,9 @@ public class Swing : Card
             enemy.health = 0;
         }
     }
+
+    public override int ManaCost()
+    {
+        return 2;
+    }
 }
