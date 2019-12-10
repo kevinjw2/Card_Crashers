@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBattle
 {
-    public int health = 8;
-    public int attack = 2;
+    public int health = 15;
+    public int attack = 3;
+    public Vector3 pos;
 
     public void Attack(PlayerBattle player)
     {
-        player.health -= attack;
-        if (player.health < 0)
-        {
-            player.health = 0;
-        }
+        player.shield -= attack;
     }
 
 }

@@ -1,17 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBattle : MonoBehaviour
 {
-    public int health = 20;
-    public int mana = 1;
+    public const int MAX_MANA = 5;
+    public int health = 30;
+    public int mana = 5;
+    public int shield = 0;
     public Deck deck;
     public PlayerHand cardsInHand;
-    
+    public Text healthBar, manaBar, shieldBar;
 
-    public void ResetStats()
+    private void Update()
     {
-        this.health = 20;
+        healthBar.text = "HEALTH:\t" + health;
+        manaBar.text = "MANA:\t" + mana;
+        shieldBar.text = "SHIELD:\t" + shield;
+
+        if (shield < 0)
+        {
+            health += shield;
+            shield = 0;
+        }
+        if (health < 0)
+        {
+            health = 0;
+        }
+    }
+
+    public void ResetMana()
+    {
+        this.mana = MAX_MANA;
     }
 }

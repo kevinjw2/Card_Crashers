@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHand : MonoBehaviour
 {
     public Card[] cardList;
     private Card clickedCard;
-    //private const int capacity;
+    public Text endTurnButton;
+    public bool endTurn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         //cardList = new List<Card>();
         this.gameObject.SetActive(false);
+        endTurn = false;
     }
 
     // Update is called once per frame

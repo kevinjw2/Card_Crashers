@@ -103,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
             battle = this.gameObject.AddComponent<BattleHandler>();
             battle.player = player;
             battle.enemy = enemy;
+            battle.enemy.pos = enemyPos;
         }
         else if (groundTile != null && obstacleTile == null)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //BattleHandler manages the control flow logic of a battle.
 //BattleHandler is instantiated whenever a battle starts.
@@ -14,6 +15,7 @@ public class BattleHandler : MonoBehaviour
     public PlayerHand cardsInHand;
     public EnemyBattle enemy;
     public BattleState state;
+    //public Text enemyHealth;
 
     public BattleHandler(PlayerBattle player, EnemyBattle enemy)
     {
@@ -38,22 +40,39 @@ public class BattleHandler : MonoBehaviour
         Debug.Log("Current BattleState is " + state);
         Debug.Log("Player health is " + player.health);
         Debug.Log("Enemy health is " + enemy.health);
+        //TODO: draw card, update hand, discard used card
+
+        CheckWinState();
+        if (state == BattleState.PlayerWin || state == BattleState.EnemyWin)
+        {
+            //TODO: Battle is over
+            //This is currently handled in player movement script
+        }
 
         if (state == BattleState.PlayerTurn)
         {
             //Player turn:
-            if (cardsInHand.cardHasBeenClicked())
+            if (!cardsInHand.endTurn)
             {
                 Card clicked = cardsInHand.getClicked();
-                clicked.CardEffect(player, enemy);
-                state = BattleState.EnemyTurn;
+                if (clicked != null && clicked.ManaCost() <= player.mana)
+                {
+                    player.mana -= clicked.ManaCost();
+                    clicked.CardEffect(player, enemy);
+                }
+                else
+                {
+                    //Not enough mana
+                }
 
-                //TODO: draw card, update hand, discard used card
+                
             }
             else
             {
-                return;
+                state = BattleState.EnemyTurn;
             }
+
+            return;
         }
         else if (state == BattleState.EnemyTurn)
         {
@@ -61,21 +80,17 @@ public class BattleHandler : MonoBehaviour
             enemy.Attack(player);
             state = BattleState.PlayerTurn;
         }
-        
-        CheckWinState();
-        if(state == BattleState.PlayerWin || state == BattleState.EnemyWin)
-        {
-            //TODO: Battle is over
-            //This is currently handled in player movement script
-        }
+
+        cardsInHand.endTurn = false;
+        player.ResetMana();
 
     }
 
     private void OnDestroy()
     {
         //Reset world state before battle closes
-        player.ResetStats();
         cardsInHand.gameObject.SetActive(false);
+        //Destroy(enemyHealth);
     }
 
     //Checks conditions and sets the appropriate game state

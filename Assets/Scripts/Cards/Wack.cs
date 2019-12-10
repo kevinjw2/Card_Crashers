@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swing : Card
+public class Wack : Card
 {
 
     // Start is called before the first frame update
     void Start()
     {
-        this.manaCost = 1;
+        this.manaCost = 0;
     }
 
     public override void CardEffect(PlayerBattle player, EnemyBattle enemy)
     {
-        enemy.health -= 2;
+        enemy.health -= 1;
         if (enemy.health < 0)
         {
             enemy.health = 0;

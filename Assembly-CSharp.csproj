@@ -64,8 +64,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BattleHandler.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\Cards\ShieldUp.cs" />
     <Compile Include="Assets\Scripts\Cards\Swing.cs" />
+    <Compile Include="Assets\Scripts\Cards\Wack.cs" />
     <Compile Include="Assets\Scripts\Deck.cs" />
+    <Compile Include="Assets\Scripts\EndTurnButton.cs" />
     <Compile Include="Assets\Scripts\EnemyBattle.cs" />
     <Compile Include="Assets\Scripts\PlayerBattle.cs" />
     <Compile Include="Assets\Scripts\PlayerHand.cs" />
