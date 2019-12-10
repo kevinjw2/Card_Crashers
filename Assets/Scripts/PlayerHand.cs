@@ -46,4 +46,12 @@ public class PlayerHand : MonoBehaviour
         this.clickedCard = card;
         Debug.Log("Clicked card has been set to " + card.transform.name);
     }
+
+    public void ResetCards()
+    {
+        foreach (Card card in cardList)
+        {
+            card.gameObject.SetActive(true);
+        }
+    }
 }

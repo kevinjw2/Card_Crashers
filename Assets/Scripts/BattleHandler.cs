@@ -59,6 +59,7 @@ public class BattleHandler : MonoBehaviour
                 {
                     player.mana -= clicked.ManaCost();
                     clicked.CardEffect(player, enemy);
+                    clicked.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -83,6 +84,7 @@ public class BattleHandler : MonoBehaviour
 
         cardsInHand.endTurn = false;
         player.ResetMana();
+        cardsInHand.ResetCards();
 
     }
 
