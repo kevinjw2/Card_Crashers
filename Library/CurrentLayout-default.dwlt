@@ -149,7 +149,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -337,20 +337,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites/characters
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites/characters
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Kevin\Documents\Unity_Projects\Card_Crashers
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 582d0000
-    m_LastClickedID: 11608
-    m_ExpandedIDs: 00000000582d0000ce36000000ca9a3b
+    scrollPos: {x: 0, y: 99}
+    m_SelectedIDs: d4310000
+    m_LastClickedID: 12756
+    m_ExpandedIDs: 000000005a2d00007431000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000582d0000
+    m_ExpandedIDs: 000000005a2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +406,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300000e3400001834000026340000
+    m_ExpandedInstanceIDs: c62300000e340000183400002634000034340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,9 +499,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 80cfffff
-      m_LastClickedID: -12416
-      m_ExpandedIDs: 86cfffffd6d2ffff74fbffff5e4a0000
+      m_SelectedIDs: c24e0000
+      m_LastClickedID: 20162
+      m_ExpandedIDs: 6cd5ffff9ed5ffff32d6ffff74fbffff5c4a00004c4e0000cc4e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.9805675, y: 8.403912, z: -14.151119}
+    m_Target: {x: 0.89303964, y: 1.8124274, z: -20.959301}
     speed: 2
-    m_Value: {x: 3.9951105, y: 8.863835, z: -13.891216}
+    m_Value: {x: 0.89303964, y: 1.8124274, z: -20.959301}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -596,9 +596,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 43.015583
+    m_Target: 7.6249123
     speed: 2
-    m_Value: 40.811745
+    m_Value: 7.6249123
   m_Ortho:
     m_Target: 1
     speed: 2
