@@ -5,7 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Tilemap ground, obstacles, enemy;
+    public List<Tilemap> ground, obstacles;
+    public Tilemap enemy;
     Vector3 pos;
     public float speed;
     private BattleHandler battle;
@@ -21,31 +22,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        bool inBattle = Battle();
         //Disable movement when in battle
-        if(battle != null)
+        if (inBattle)
         {
-            if (battle.state == BattleHandler.BattleState.PlayerWin)
-            {
-                //End battle
-                Destroy(battle);
-                battle = null;
-                //Disable enemy tile
-                enemy.SetTile(enemy.WorldToCell(enemyPos), null);
-                enemyTile = null;
-            }
-            else if (battle.state == BattleHandler.BattleState.EnemyWin)
-            {
-                //Game over
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
-            }
-
-                return;
+            return;
         }
 
+        Move();
+    }
+
+    //Perform smooth movement between tiles
+    private void Move()
+    {
         //Only move if we're not currently moving between tiles
         if (transform.position == pos)
         {
@@ -53,19 +42,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Move();
+            //Move to current position
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed);
         }
     }
 
-    //Perform smooth movement between tiles
-    void Move()
-    {
-        //Move to current position
-        transform.position = Vector3.MoveTowards(transform.position, pos, speed);
-    }
-
     //Tile movement calculation
-    void InputToMovement()
+    private void InputToMovement()
     {
         Vector3 moveDir = new Vector3(0, 0, 0);
 
@@ -89,27 +72,79 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 newPos = pos + moveDir;
 
-        //Check tilemap for terrain condition at new position
-        TileBase groundTile = ground.GetTile(ground.WorldToCell(newPos));
-        TileBase obstacleTile = obstacles.GetTile(obstacles.WorldToCell(newPos));
+        //Check tilemaps for terrain condition at new position
+        CheckObstacle(newPos);
+        
+    }
+
+    private void CheckObstacle(Vector3 newPos)
+    {
+        //Check for enemies
         enemyTile = enemy.GetTile(enemy.WorldToCell(newPos));
         enemyPos = newPos;
-
         if (enemyTile != null)
         {
-            //Enemy encounter
+            //Enemy encounter, create a Battle instance
             PlayerBattle player = this.gameObject.GetComponent<PlayerBattle>();
             EnemyBattle enemy = new EnemyBattle();
             battle = this.gameObject.AddComponent<BattleHandler>();
             battle.player = player;
             battle.enemy = enemy;
             battle.enemy.pos = enemyPos;
+
+            return;
         }
-        else if (groundTile != null && obstacleTile == null)
+
+        //Check for obstacles
+        foreach (Tilemap map in obstacles)
         {
-            pos = newPos;
+            TileBase obstacleTile = map.GetTile(map.WorldToCell(newPos));
+            if (obstacleTile != null)
+            {
+                // There is an obstacle in the way
+                return;
+            }
         }
-        
+
+        //Check for walkable ground
+        foreach (Tilemap map in ground)
+        {
+            TileBase groundTile = map.GetTile(map.WorldToCell(newPos));
+            if (groundTile != null)
+            {
+                //We can finally move
+                pos = newPos;
+            }
+        }
+    }
+
+    private bool Battle()
+    {
+        if (battle != null)
+        {
+            if (battle.state == BattleHandler.BattleState.PlayerWin)
+            {
+                //End battle
+                Destroy(battle);
+                battle = null;
+                //Disable enemy tile
+                enemy.SetTile(enemy.WorldToCell(enemyPos), null);
+                enemyTile = null;
+            }
+            else if (battle.state == BattleHandler.BattleState.EnemyWin)
+            {
+                //Game over
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
 }

@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BattleHandler.cs" />
-    <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\Cards\Card.cs" />
     <Compile Include="Assets\Scripts\Cards\ShieldUp.cs" />
     <Compile Include="Assets\Scripts\Cards\Swing.cs" />
     <Compile Include="Assets\Scripts\Cards\Wack.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\PlayerBattle.cs" />
     <Compile Include="Assets\Scripts\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <None Include="Assets\Sprites\GuttyKreumNatureTilesvol1\Readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Users/Kevin/Documents/Unity_Projects/Card_Crashers/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
