@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 65c49dbe45f654dbf85995e9e93d5d8e
+guid: d9fe4b76591ce4b7b88d64ab2c80e9c0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: water_0
-    21300002: water_1
-    21300004: water_2
-    21300006: water_3
-    21300008: water_4
-    21300010: water_5
-    21300012: water_6
-    21300014: water_7
-    21300016: water_8
-    21300018: water_9
-    21300020: water_10
-    21300022: water_11
-    21300024: water_12
-    21300026: water_13
-    21300028: water_14
-    21300030: water_15
-    21300032: water_16
-    21300034: water_17
+    21300000: disciple-45x51_0
+    21300002: disciple-45x51_1
+    21300004: disciple-45x51_2
+    21300006: disciple-45x51_3
+    21300008: disciple-45x51_4
+    21300010: disciple-45x51_5
+    21300012: disciple-45x51_6
+    21300014: disciple-45x51_7
+    21300016: disciple-45x51_8
+    21300018: disciple-45x51_9
+    21300020: disciple-45x51_10
+    21300022: disciple-45x51_11
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,13 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water_0
+      name: disciple-45x51_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
-        width: 32
-        height: 32
+        x: 3
+        y: 19
+        width: 38
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,19 +110,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8544c45064f4841cbb7e9ab8d42fe027
+      spriteID: 7ec29faae6fcf4103bf91fc86a8b0fe0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_1
+      name: disciple-45x51_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
-        width: 32
-        height: 32
+        x: 48
+        y: 102
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4be3350f5823d42a7971f8271658ed31
+      spriteID: a7cd18c65e3e44dd38d44cc305e968e7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_2
+      name: disciple-45x51_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
-        width: 32
-        height: 32
+        x: 93
+        y: 102
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +150,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23b6ff7fe82d94a30b2254f8ee4df007
+      spriteID: f5fca5cfd261c4455bb56e283a5be691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_3
+      name: disciple-45x51_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
+        x: 138
+        y: 102
+        width: 33
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +170,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69d97a997443f4a18a0dbbf2e4662095
+      spriteID: 090a4db394b0943e5836f9f671ce9fe7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_4
+      name: disciple-45x51_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
+        x: 48
+        y: 19
+        width: 40
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,19 +190,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b799aede133e94257b4c3414de304a2d
+      spriteID: e8367801f73dc45618283a2e4be8c17c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_5
+      name: disciple-45x51_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
+        x: 93
+        y: 51
+        width: 34
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,19 +210,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c64297f3ec2234de198d86bc670b8f52
+      spriteID: e7d5865594ebe41ceadb7350b95d8a1e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_6
+      name: disciple-45x51_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
+        x: 116
+        y: 84
+        width: 13
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,19 +230,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acc32319c96394e77bbdcd5c1a0eff70
+      spriteID: e6b787b163db14382b3c1506ef3dbcf1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_7
+      name: disciple-45x51_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 138
+        y: 51
+        width: 37
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e3c5176cca084d5ba04a6de15fe47e9
+      spriteID: 4730c295bea5047d79f1090ca73d4a27
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_8
+      name: disciple-45x51_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 158
+        y: 81
+        width: 17
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,19 +270,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31a344fffe49d4730add8fa5a039401e
+      spriteID: eb26e1f84ec6e44e9986b9b90d14c681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_9
+      name: disciple-45x51_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
+        x: 3
+        y: 0
+        width: 38
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,119 +290,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8f496ad0016d4099bde8125e82b806e
+      spriteID: b0682123b795341fca3da4f308396cbe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_10
+      name: disciple-45x51_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da383b9f02db84904a9859bebc51e828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_11
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a87f358a2023e42f986ee07812f8473b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83a8baf3aaf9549d7823046474dff00f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_13
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 450b73490687b407fa1c8326a74a40ae
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ad09413c0ce34f409476b6841f4cc88
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_15
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
         width: 32
-        height: 32
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,19 +310,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157e724eda0af4d0cb3007a72eae4044
+      spriteID: 408835dec362240d585ad453e2c82f3b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_16
+      name: disciple-45x51_11
       rect:
         serializedVersion: 2
-        x: 32
+        x: 81
         y: 0
-        width: 32
-        height: 32
+        width: 41
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,27 +330,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 334c4dd2a9ba74e5c8876786e51a2827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water_17
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50f1a130356214f11ab3888b4e91b972
+      spriteID: 5962afbea743e4bb99852b905a513da2
       vertices: []
       indices: 
       edges: []
@@ -464,7 +338,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8cfb3f4012606405cbd342911e0af0bf
+    spriteID: 0553ad75c91594c188edf4eee819e9ac
     vertices: []
     indices: 
     edges: []
