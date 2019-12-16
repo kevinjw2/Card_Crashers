@@ -9,6 +9,7 @@ public class PlayerHand : MonoBehaviour
     private Card clickedCard;
     public Text endTurnButton;
     public bool endTurn = false;
+    public Deck playerDeck;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class PlayerHand : MonoBehaviour
         //cardList = new List<Card>();
         this.gameObject.SetActive(false);
         endTurn = false;
+
     }
 
     // Update is called once per frame
@@ -49,9 +51,18 @@ public class PlayerHand : MonoBehaviour
 
     public void ResetCards()
     {
-        foreach (Card card in cardList)
+        for (int i = 0; i < cardList.Length; i++)
         {
-            card.gameObject.SetActive(true);
+            Card oldCard = cardList[i];
+            cardList[i] = playerDeck.DrawCard();
+            cardList[i].transform.position = oldCard.transform.position;
+            cardList[i].transform.localScale = oldCard.transform.localScale;
+            cardList[i].transform.parent = oldCard.transform.parent;
+            cardList[i].GetComponent<RectTransform>().localScale = oldCard.GetComponent<RectTransform>().localScale;
+
+            Destroy(oldCard.gameObject);
+
+            cardList[i].gameObject.SetActive(true);
         }
     }
 }

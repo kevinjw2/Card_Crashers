@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBattle : MonoBehaviour
 {
-    public const int MAX_MANA = 5;
+    public const int MAX_MANA = 3;
     public int health = 30;
     public int mana = 5;
     public int shield = 0;

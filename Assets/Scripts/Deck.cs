@@ -9,7 +9,11 @@ public class Deck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.cardList = new List<Card>();
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            cardList[i] = Instantiate(cardList[i]);
+            cardList[i].gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -22,17 +26,17 @@ public class Deck : MonoBehaviour
     {
         foreach (Card card in cardList)
         {
-            Destroy(card);
+            Destroy(card.gameObject);
         }
         cardList = null;
     }
 
-    void AddCard(Card card)
+    public void AddCard(Card card)
     {
         cardList.Add(card);
     }
 
-    Card DrawCard()
+    public Card DrawCard()
     {
         int n = cardList.Count;
         Card card = cardList[Random.Range(0, n)];

@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+
         bool inBattle = Battle();
         //Disable movement when in battle
         if (inBattle)
@@ -134,17 +139,22 @@ public class PlayerMovement : MonoBehaviour
             else if (battle.state == BattleHandler.BattleState.EnemyWin)
             {
                 //Game over
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
+                Quit();
             }
 
             return true;
         }
 
         return false;
+    }
+
+    private void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
 }
